@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/krimple/node-behaving--badly#readme",
   "dependencies": {
+    "async": "^2.0.0-rc.6",
     "bluebird": "^3.4.1",
     "express": "^4.14.0",
     "faker": "^3.1.0",
