@@ -1,0 +1,42 @@
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /functionalramda
+Document Length:        31 bytes
+
+Concurrency Level:      6
+Time taken for tests:   44.672 seconds
+Complete requests:      180
+Failed requests:        0
+Total transferred:      41940 bytes
+HTML transferred:       5580 bytes
+Requests per second:    4.03 [#/sec] (mean)
+Time per request:       1489.058 [ms] (mean)
+Time per request:       248.176 [ms] (mean, across all concurrent requests)
+Transfer rate:          0.92 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.2      0       2
+Processing:  1005 1478 137.2   1469    2029
+Waiting:     1004 1478 137.1   1469    2029
+Total:       1005 1478 137.2   1469    2030
+
+Percentage of the requests served within a certain time (ms)
+  50%   1469
+  66%   1500
+  75%   1525
+  80%   1549
+  90%   1604
+  95%   1681
+  98%   1970
+  99%   2021
+ 100%   2030 (longest request)
