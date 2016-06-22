@@ -60,7 +60,7 @@ app.get('/functionalramda', function(req, res) {
       }
       return memo;
     }    
-    var result = R.reducdocument.querySelector('selector');e(reducer, initial, names);
+    var result = R.reduce(reducer, initial, names);
     res.send(200, result);
   });
 
