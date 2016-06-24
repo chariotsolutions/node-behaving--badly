@@ -3,40 +3,38 @@ Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
 Benchmarking localhost (be patient)
-
-
-Server Software:        
-Server Hostname:        localhost
+Total of 299 requests completed
+r Hostname:        localhost
 Server Port:            3000
 
 Document Path:          /functionalramda
 Document Length:        31 bytes
 
-Concurrency Level:      6
-Time taken for tests:   44.672 seconds
-Complete requests:      180
+Concurrency Level:      2
+Time taken for tests:   365.796 seconds
+Complete requests:      300
 Failed requests:        0
-Total transferred:      41940 bytes
-HTML transferred:       5580 bytes
-Requests per second:    4.03 [#/sec] (mean)
-Time per request:       1489.058 [ms] (mean)
-Time per request:       248.176 [ms] (mean, across all concurrent requests)
-Transfer rate:          0.92 [Kbytes/sec] received
+Total transferred:      69900 bytes
+HTML transferred:       9300 bytes
+Requests per second:    0.82 [#/sec] (mean)
+Time per request:       2438.643 [ms] (mean)
+Time per request:       1219.322 [ms] (mean, across all concurrent requests)
+Transfer rate:          0.19 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.2      0       2
-Processing:  1005 1478 137.2   1469    2029
-Waiting:     1004 1478 137.1   1469    2029
-Total:       1005 1478 137.2   1469    2030
+Connect:        0    0   0.1      0       1
+Processing:   818 2438 760.4   2757    4651
+Waiting:      818 2438 760.4   2757    4650
+Total:        818 2438 760.4   2757    4651
 
 Percentage of the requests served within a certain time (ms)
-  50%   1469
-  66%   1500
-  75%   1525
-  80%   1549
-  90%   1604
-  95%   1681
-  98%   1970
-  99%   2021
- 100%   2030 (longest request)
+  50%   2757
+  66%   2926
+  75%   2981
+  80%   3046
+  90%   3202
+  95%   3319
+  98%   3648
+  99%   4121
+ 100%   4651 (longest request)
