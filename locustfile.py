@@ -16,7 +16,7 @@ def raw(l):
     l.client.get("/rawdata")
 
 class UserBehavior(TaskSet):
-    tasks = {raw:1, index: 2}
+    tasks = {ramda:1, index: 2}
 
 class WebsiteUser(HttpLocust):
     task_set = UserBehavior
