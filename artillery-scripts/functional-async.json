@@ -1,0 +1,24 @@
+{
+  "config": {
+    "target": "http://localhost:3000",
+      "phases": [
+        {"duration": 10, "arrivalRate": 5},
+        {"duration": 230, "arrivalRate": 5, "rampTo": 50}
+      ]
+  },
+  "scenarios": [
+    {
+      "name": "static-content",
+      "flow": [
+             {
+              "get": {
+                "url": "/functionalasync"
+              }
+            },
+         {
+            "think": 3
+         }
+        ]
+      }
+  ]
+}

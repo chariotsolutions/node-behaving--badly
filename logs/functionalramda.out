@@ -2,39 +2,41 @@ This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
-Benchmarking localhost (be patient)
-Total of 299 requests completed
-r Hostname:        localhost
+Benchmarking localhost (be patient).....done
+
+
+Server Software:        
+Server Hostname:        localhost
 Server Port:            3000
 
 Document Path:          /functionalramda
 Document Length:        31 bytes
 
-Concurrency Level:      2
-Time taken for tests:   365.796 seconds
-Complete requests:      300
+Concurrency Level:      4
+Time taken for tests:   14.368 seconds
+Complete requests:      20
 Failed requests:        0
-Total transferred:      69900 bytes
-HTML transferred:       9300 bytes
-Requests per second:    0.82 [#/sec] (mean)
-Time per request:       2438.643 [ms] (mean)
-Time per request:       1219.322 [ms] (mean, across all concurrent requests)
-Transfer rate:          0.19 [Kbytes/sec] received
+Total transferred:      4660 bytes
+HTML transferred:       620 bytes
+Requests per second:    1.39 [#/sec] (mean)
+Time per request:       2873.551 [ms] (mean)
+Time per request:       718.388 [ms] (mean, across all concurrent requests)
+Transfer rate:          0.32 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       1
-Processing:   818 2438 760.4   2757    4651
-Waiting:      818 2438 760.4   2757    4650
-Total:        818 2438 760.4   2757    4651
+Connect:        0    0   0.0      0       0
+Processing:   740 2663 570.1   2861    3010
+Waiting:      740 2663 570.1   2861    3010
+Total:        740 2663 570.1   2861    3010
 
 Percentage of the requests served within a certain time (ms)
-  50%   2757
-  66%   2926
-  75%   2981
-  80%   3046
-  90%   3202
-  95%   3319
-  98%   3648
-  99%   4121
- 100%   4651 (longest request)
+  50%   2861
+  66%   2891
+  75%   2895
+  80%   2922
+  90%   2977
+  95%   3010
+  98%   3010
+  99%   3010
+ 100%   3010 (longest request)

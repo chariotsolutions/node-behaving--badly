@@ -6,11 +6,13 @@ var R = require('ramda');
 var async = require('async');
 
 var names = [];
-for (var i = 0; i < 10000000; i++) {
+for (var i = 0; i < 10000; i++) {
   var randomName = faker.name.firstName();
   names.push(randomName);
 }
 console.log('generated names');
+
+app.use(express.static('public'));
 
 app.get('/', function staticcontent(req, res) {
     res.send('<html><body>simple page content.</body></html>');
@@ -77,7 +79,7 @@ app.get('/functionalasync', function functionalasync(req, res) {
    } else if(ucname[0] >= 'N' && ucname[0] <= 'Z') {
      memo['NTOZ'] = memo['NTOZ'] + 1;
    }
-   process.nextTick(function() {
+   process.nextTick(function asyncAnswerOnTick() {
       callback(null, memo);
    });
   },
