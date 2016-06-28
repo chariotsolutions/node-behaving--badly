@@ -10,33 +10,34 @@ Server Hostname:        localhost
 Server Port:            3000
 
 Document Path:          /functionalasync
-Document Length:        31 bytes
+Document Length:        28 bytes
 
 Concurrency Level:      4
-Time taken for tests:   91.192 seconds
+Time taken for tests:   0.008 seconds
 Complete requests:      20
 Failed requests:        0
-Total transferred:      4660 bytes
-HTML transferred:       620 bytes
-Requests per second:    0.22 [#/sec] (mean)
-Time per request:       18238.365 [ms] (mean)
-Time per request:       4559.591 [ms] (mean, across all concurrent requests)
-Transfer rate:          0.05 [Kbytes/sec] received
+Non-2xx responses:      20
+Total transferred:      4520 bytes
+HTML transferred:       560 bytes
+Requests per second:    2491.90 [#/sec] (mean)
+Time per request:       1.605 [ms] (mean)
+Time per request:       0.401 [ms] (mean, across all concurrent requests)
+Transfer rate:          549.97 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.0      0       0
-Processing:  4184 16910 3793.3  17909   19597
-Waiting:     4184 16910 3793.3  17909   19597
-Total:       4184 16910 3793.4  17909   19597
+Connect:        0    0   0.1      0       0
+Processing:     0    1   1.2      1       4
+Waiting:        0    1   1.2      1       4
+Total:          1    1   1.2      1       4
 
 Percentage of the requests served within a certain time (ms)
-  50%  17909
-  66%  18076
-  75%  18788
-  80%  18822
-  90%  19574
-  95%  19597
-  98%  19597
-  99%  19597
- 100%  19597 (longest request)
+  50%      1
+  66%      1
+  75%      1
+  80%      3
+  90%      4
+  95%      4
+  98%      4
+  99%      4
+ 100%      4 (longest request)

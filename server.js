@@ -20,10 +20,8 @@ app.get('/', function staticcontent(req, res) {
 
 app.get('/tightloop', function tightloop(req, res) {
     var i = 0;
-    for (var i = 0; i < 10000000000; i++) {
+    for (var i = 0; i < 10000000; i++) {
       j = i - 1.5 * i;
-      if (j % 20000000) console.log('.');
-      setTimeout(() => { }, 0);
     }
     res.status(200).send( "I am all done now.");
 });
@@ -70,15 +68,34 @@ app.get('/functionalramda', function functionalramda(req, res) {
     res.status(200).send( result);
   });
 
-// TODO - overkill?
-app.get('/functionalasync', function functionalasync(req, res) {
-  async.reduce(names, {'ATOM': 0, 'NTOZ': 0}, function functionalasync(memo, name, callback) {
+// here's what you get when you run without setTimeout - an endless loop.
+// you need to call a callback (see the next one)
+app.get('/functionalasync-noyield', function functionalasync(req, res) {
+  async.reduce(names, {'ATOM': 0, 'NTOZ': 0}, function doItSync(memo, name) {
    var ucname = name.toUpperCase();
    if (ucname[0] >= 'A' && ucname[0] <= 'M') {
      memo['ATOM'] = memo['ATOM'] + 1;
    } else if(ucname[0] >= 'N' && ucname[0] <= 'Z') {
      memo['NTOZ'] = memo['NTOZ'] + 1;
    }
+   return memo;
+  },
+  function(err, result) {
+    res.status(200).send( result);  
+  });
+  
+});
+
+app.get('/functionalasync-yield', function functionalasync(req, res) {
+  async.reduce(names, {'ATOM': 0, 'NTOZ': 0}, function doItAsync(memo, name, callback) {
+   var ucname = name.toUpperCase();
+   if (ucname[0] >= 'A' && ucname[0] <= 'M') {
+     memo['ATOM'] = memo['ATOM'] + 1;
+   } else if(ucname[0] >= 'N' && ucname[0] <= 'Z') {
+     memo['NTOZ'] = memo['NTOZ'] + 1;
+   }
+   // important - forgetting to call callback on the next tick
+   // will cause a stack blow-out.
    process.nextTick(function asyncAnswerOnTick() {
       callback(null, memo);
    });
@@ -86,8 +103,8 @@ app.get('/functionalasync', function functionalasync(req, res) {
   function(err, result) {
     res.status(200).send( result);  
   });
-  
 });
+
 app.get('/rawdata', function rawdata(req, res) {
     res.status(200).send( names);
 });

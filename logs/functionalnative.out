@@ -10,33 +10,33 @@ Server Hostname:        localhost
 Server Port:            3000
 
 Document Path:          /functionalnative
-Document Length:        31 bytes
+Document Length:        29 bytes
 
 Concurrency Level:      4
-Time taken for tests:   16.197 seconds
+Time taken for tests:   0.612 seconds
 Complete requests:      20
 Failed requests:        0
-Total transferred:      4660 bytes
-HTML transferred:       620 bytes
-Requests per second:    1.23 [#/sec] (mean)
-Time per request:       3239.479 [ms] (mean)
-Time per request:       809.870 [ms] (mean, across all concurrent requests)
-Transfer rate:          0.28 [Kbytes/sec] received
+Total transferred:      4620 bytes
+HTML transferred:       580 bytes
+Requests per second:    32.70 [#/sec] (mean)
+Time per request:       122.343 [ms] (mean)
+Time per request:       30.586 [ms] (mean, across all concurrent requests)
+Transfer rate:          7.38 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
 Connect:        0    0   0.0      0       0
-Processing:   923 3000 586.7   3194    3471
-Waiting:      923 3000 586.7   3194    3471
-Total:        923 3000 586.8   3194    3471
+Processing:    75  118  41.2    103     201
+Waiting:       75  118  40.9    103     200
+Total:         76  118  41.2    103     201
 
 Percentage of the requests served within a certain time (ms)
-  50%   3194
-  66%   3214
-  75%   3242
-  80%   3245
-  90%   3348
-  95%   3471
-  98%   3471
-  99%   3471
- 100%   3471 (longest request)
+  50%    103
+  66%    112
+  75%    124
+  80%    184
+  90%    199
+  95%    201
+  98%    201
+  99%    201
+ 100%    201 (longest request)
