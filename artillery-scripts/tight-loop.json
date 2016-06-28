@@ -11,10 +11,12 @@
       "flow": [
              {
               "get": {
-                "url": "/asyoulikeit.html"
+                "url": "/tightloop"
               }
-            }
-         
+            },
+         {
+            "think": 3
+         }
         ]
       }
   ]

@@ -11,10 +11,12 @@
       "flow": [
              {
               "get": {
-                "url": "/asyoulikeit.html"
+                "url": "/functionalasync-noyield"
               }
-            }
-         
+            },
+         {
+            "think": 3
+         }
         ]
       }
   ]

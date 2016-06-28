@@ -11,10 +11,12 @@
       "flow": [
              {
               "get": {
-                "url": "/asyoulikeit.html"
+                "url": "/functionalnative"
               }
-            }
-         
+            },
+         {
+            "think": 3
+         }
         ]
       }
   ]

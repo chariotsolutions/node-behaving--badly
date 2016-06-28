@@ -1,9 +1,9 @@
 {
   "config": {
     "target": "http://localhost:3000",
+      "timeout": 60,
       "phases": [
-        {"duration": 10, "arrivalRate": 5},
-        {"duration": 230, "arrivalRate": 5, "rampTo": 50}
+        {"duration": 300, "arrivalRate": 5, "rampTo": 100}
       ]
   },
   "scenarios": [
@@ -12,7 +12,7 @@
       "flow": [
              {
               "get": {
-                "url": "/functionalasync"
+                "url": "/functionalasync-yield"
               }
             },
          {
