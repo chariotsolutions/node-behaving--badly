@@ -6,7 +6,7 @@ var R = require('ramda');
 var async = require('async');
 
 var names = [];
-for (var i = 0; i < 10000; i++) {
+for (var i = 0; i < 1000000; i++) {
   var randomName = faker.name.firstName();
   names.push(randomName);
 }
@@ -19,20 +19,34 @@ app.get('/', function staticcontent(req, res) {
 });
 
 app.get('/tightloop', function tightloop(req, res) {
-    var i = 0;
-    for (var i = 0; i < 10000000; i++) {
-      j = i - 1.5 * i;
+    function blockCpuFor(ms) {
+        var now = new Date().getTime();
+        var result = 0
+        while(shouldRun) {
+            result += Math.random() * Math.random();
+            if (new Date().getTime() > now +ms) {
+                console.log('exiting...');
+                res.status(200).send( "I am all done now.");
+
+            }
+        }   
     }
-    res.status(200).send( "I am all done now.");
+
+    function start(req) {
+        shouldRun = true;
+        process.nextTick(blockCpuFor(1000*.5));
+        setTimeout(start(req), 1000* (1 - desiredLoadFactor));
+    }
+
+    start(req);
 });
 
 app.get('/growit', function growit(req, res) {
     var elements = [];
-    while (true) {
-      setTimeout(() => {
+    for (var i = 0; i < 1000000; i++) {
           elements.push(Math.random(23423423));
-      },0);
     }
+    res.status(200).send("We have " + i + " elements.");
 });
 
 app.get('/functionalnative', function functionalnative(req, res) {
@@ -96,7 +110,7 @@ app.get('/functionalasync-yield', function functionalasync(req, res) {
    }
    // important - forgetting to call callback on the next tick
    // will cause a stack blow-out.
-   process.nextTick(function asyncAnswerOnTick() {
+   setImmediate(function asyncAnswerOnTick() {
       callback(null, memo);
    });
   },
@@ -109,6 +123,6 @@ app.get('/rawdata', function rawdata(req, res) {
     res.status(200).send( names);
 });
 
-app.listen(3000, function () {
-      console.log('Example app listening on port 3000!');
+app.listen(3033, function () {
+      console.log('Example app listening on port 3033!');
 });

@@ -2,7 +2,7 @@
   "config": {
     "target": "http://localhost:3033",
       "phases": [
-        {"duration": 300, "arrivalRate": 5, "rampTo": 100}
+        {"duration": 300, "arrivalRate": 5, "rampTo": 5}
       ]
   },
   "scenarios": [
@@ -11,10 +11,12 @@
       "flow": [
              {
               "get": {
-                "url": "/asyoulikeit.html"
+                "url": "/memoryhog"
               }
-            }
-         
+            },
+         {
+            "think": 3
+         }
         ]
       }
   ]
