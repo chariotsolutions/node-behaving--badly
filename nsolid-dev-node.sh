@@ -1,3 +1,3 @@
 #!/bin/bash
 # Note - install nodemon with npm install -g nodemon first
-NSOLID_HUB=4001 nodemon server.js
+NSOLID_HUB=2379 nodemon server.js
