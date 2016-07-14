@@ -1,23 +1,23 @@
 {
   "config": {
-    "target": "http://192.168.1.32:3033",
+    "target": "http://localhost:3000",
       "phases": [
-        {"duration": 300, "arrivalRate": 5, "rampTo": 5}
+      {"duration": 300, "arrivalRate": 5, "rampTo": 5}
       ]
   },
-  "scenarios": [
+    "scenarios": [
     {
       "name": "static-content",
       "flow": [
-             {
-              "get": {
-                "url": "/growit"
-              }
-            },
-         {
-            "think": 7
-         }
-        ]
+      {
+        "get": {
+          "url": "/growit"
+        }
+      },
+      {
+        "think": 3
       }
-  ]
+      ]
+    }
+    ]
 }

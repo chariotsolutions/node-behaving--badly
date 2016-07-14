@@ -3,7 +3,7 @@
     "target": "http://localhost:3033",
       "timeout": 60,
       "phases": [
-        {"duration": 300, "arrivalRate": 5, "rampTo": 40}
+        {"duration": 300, "arrivalRate": 5, "rampTo": 30}
       ]
   },
   "scenarios": [
