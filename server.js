@@ -6,6 +6,8 @@ var R = require('ramda');
 var async = require('async');
 
 var names = [];
+var piggie = [];
+var pigcount = 0;
 for (var i = 0; i < 1000000; i++) {
   var randomName = faker.name.firstName();
   names.push(randomName);
@@ -42,9 +44,12 @@ app.get('/tightloop', function tightloop(req, res) {
 });
 
 app.get('/growit', function growit(req, res) {
-    var elements = [];
-    for (var i = 0; i < 1000000; i++) {
-          elements.push(Math.random(23423423));
+    pigcount = pigcount + 1;
+    for (var i = 0; i < 10000; i++) {
+      piggie.push(Math.random(23423423));
+    }
+    if (pigcount % 20) {
+      piggie.length = 0;
     }
     res.status(200).send("We have " + i + " elements.");
 });
